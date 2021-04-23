@@ -1,5 +1,5 @@
 /** @file   MiniStdOptional.cpp
-   @author  Marek Krajewski EXT (www.ib-krajewski.de)
+   @author  Marek Krajewski (mrkkrj) - www.ib-krajewski.de
    @date    26.11.2020
 
    @brief Needed global variables for "in-place" replacement of std::optional for 

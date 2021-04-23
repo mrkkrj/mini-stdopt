@@ -1,9 +1,9 @@
 # mini-stdopt
 An "in-place" replacement of std::optional for ancient (Microsoft...;) compilers.
 
-WIP!!! -> std::string not quite working yet, add VisualStudio 2015 example
+**WIP!!!** -> _std::string_ not quite working yet, add _VisualStudio 2015_ example
 
-##Example:
+## Example:
 
     #include <MiniStdOptional.h>
 
@@ -20,7 +20,7 @@ WIP!!! -> std::string not quite working yet, add VisualStudio 2015 example
     }
 
 # TODO:
- - get the example to run with std::string
+ - get the example to run with _std::string_
  - add (more) tests
  - add description
  - add CMake support

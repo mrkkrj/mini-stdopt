@@ -1,5 +1,5 @@
 /** @file   MiniStdOptional.h
-   @author  Marek Krajewski EXT (www.ib-krajewski.de)
+   @author  Marek Krajewski (mrkkrj) - www.ib-krajewski.de
    @date    26.11.2020
 
    @brief An "in-place" replacement of std::optional for ancient (Microsoft...;) compilers.
