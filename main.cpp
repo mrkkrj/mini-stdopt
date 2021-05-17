@@ -30,7 +30,7 @@ struct TestStruct
 {
    int i;
    double d;
-   TestStruct() : i(1), d(1.0) {};
+   TestStruct() : i(1), d(1.11) {};
    TestStruct(int ival, double dval) : i(ival), d(dval) {};
    ~TestStruct() {
       i = 0;
@@ -46,10 +46,15 @@ std::ostream& operator<<(std::ostream& os, const TestStruct& ts)
 }
 
 
+// tests
+
 int main()
 {
-   // std::optional or MinStdOptional will be used for opt::optional (depending on the compiler)!
+   // Note: _std::optional_ or _ibkrj::utils::MinStdOptional_ will be used here for _opt::optional_:
+   //   1. depending on the Microsoft compiler version
+   //   2. depending on COMPILER_HAS_NO_STD_OPTIONAL definition
 
+   // built-ins
    opt::optional<int> optInt(1);
    assert(optInt.has_value());
    check<int>(optInt);
@@ -60,20 +65,7 @@ int main()
    optInt.emplace(44);
    check<int>(optInt);
 
-
-   opt::optional<std::string> optStrg;
-   check<std::string>(optStrg, "string");
-
-#if 0
-   //optStrg = "TEST!!!"; // OPEN TODO:: conversion!!!
-   std::string strg = "TEST!!!"; 
-   optStrg = strg; // OPEN TODO::: not working yet!!!
-#endif
-
-   optStrg.emplace("TEST!!!");
-   assert(optStrg.has_value());
-   check<std::string>(optStrg, "string");
-
+   // PODT
    opt::optional<TestStruct> optStruct;
    check<TestStruct>(optStruct);
 
@@ -83,4 +75,24 @@ int main()
 
    optStruct.emplace(44, 44.44);
    check<TestStruct>(optStruct);
+
+   // full C++ class
+   opt::optional<std::string> optStrg;
+   assert(!optStrg.has_value());
+   check<std::string>(optStrg, "string");
+
+   std::string strg = "TEST strg 1"; 
+   optStrg = strg; 
+   assert(optStrg.has_value());
+   check<std::string>(optStrg, strg);
+
+   optStrg = "TEST strg 2";
+   check<std::string>(optStrg, "string");
+
+   optStrg.emplace("TEST strg 3");
+   assert(optStrg.has_value());
+   check<std::string>(optStrg, "string");
+
+   // finito
+   std::cout << "TEST::: finished ---";
 }

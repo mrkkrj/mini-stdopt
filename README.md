@@ -1,7 +1,7 @@
 # mini-stdopt
-An "in-place" replacement of std::optional for ancient (Microsoft...;) compilers.
+An "in-place" replacement of _std::optional_ for ancient (Microsoft... ;) compilers. Your compiler will need C++11 support though (as C++98 wasn't tested)!
 
-**WIP!!!** -> _std::string_ not quite working yet, add _VisualStudio 2015_ example
+** WIP!!! ** -> _VisualStudio 2015_ example missing, much more tests needed!
 
 ## Example:
 
@@ -20,7 +20,7 @@ An "in-place" replacement of std::optional for ancient (Microsoft...;) compilers
     }
 
 # TODO:
- - get the example to run with _std::string_
+ - add _VisualStudio 2015_ example
  - add (more) tests
  - add description
  - add CMake support

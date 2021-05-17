@@ -101,6 +101,19 @@ namespace ibkrj {
          return *this;
       }
 
+      T& operator=(const T& value) noexcept {
+         if (!m_initialized)
+         {
+            emplace(value);
+         }
+         else
+         {
+            m_value = value;
+         }
+
+         return m_value;
+      }
+
       operator T () {
          assert(m_initialized);
          return m_value;
